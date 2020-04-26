@@ -1,0 +1,4 @@
+rootProject.name='Demo01'
+include ':app'
+include ':app:gbaselibrary'
+include ':gbaselibrary'
