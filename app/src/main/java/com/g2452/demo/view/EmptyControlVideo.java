@@ -12,6 +12,8 @@ import com.g2452.demo.R;
 import com.g2452.demo.util.LogUtil;
 import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer;
 
+import moe.codeest.enviews.ENPlayView;
+
 /**
  * * 作者：G
  * * 时间：2020/4/24  17:04
@@ -22,7 +24,7 @@ import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer;
 public class EmptyControlVideo extends StandardGSYVideoPlayer {
 
     private ImageView mVideoImg;
-    private ImageView mPauseImg;
+    private ENPlayView mPauseImg;
     private RelativeLayout mVideoRelativeLayout;
 
     public EmptyControlVideo(Context context, Boolean fullFlag) {
@@ -46,7 +48,7 @@ public class EmptyControlVideo extends StandardGSYVideoPlayer {
     protected void init(Context context) {
         super.init(context);
         mVideoImg = (ImageView) findViewById(R.id.video_img);
-        mPauseImg = (ImageView) findViewById(R.id.start);
+        mPauseImg = (ENPlayView) findViewById(R.id.start);
     }
 
     @Override

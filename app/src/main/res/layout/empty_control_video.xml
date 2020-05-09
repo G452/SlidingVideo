@@ -17,13 +17,11 @@
         android:layout_height="match_parent"
         android:gravity="center"></FrameLayout>
 
-    <ImageView
-        android:visibility="gone"
+    <moe.codeest.enviews.ENPlayView
         android:id="@+id/start"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:src="@drawable/pause"
-        android:layout_centerInParent="true"></ImageView>
+        android:layout_centerInParent="true"></moe.codeest.enviews.ENPlayView>
 
 
 </RelativeLayout>
