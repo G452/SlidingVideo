@@ -77,6 +77,4 @@ public class VideoAdapter2 extends BaseRecycleAdapter<VideoBean> {
     public interface OnClickLintener {
         void onclick(BaseViewHolder holder,int postion);
     }
-
-
 }

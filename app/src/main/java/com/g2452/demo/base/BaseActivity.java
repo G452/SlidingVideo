@@ -1,6 +1,7 @@
 package com.g2452.demo.base;
 
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
@@ -27,9 +28,10 @@ public abstract class BaseActivity<M extends Icontract.Model, V extends Icontrac
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         view = LayoutInflater.from(this).inflate(R.layout.layout_base, null);
+        setRequestedOrientation(ActivityInfo
+                .SCREEN_ORIENTATION_PORTRAIT);//竖屏
         setContentView(view);
         initViews();
-
         persenter = creatPersenter();
         if (persenter != null) {
             persenter.registerModel(creatModel());

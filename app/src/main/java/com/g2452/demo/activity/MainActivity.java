@@ -6,6 +6,7 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo
+                .SCREEN_ORIENTATION_PORTRAIT);//竖屏
         setContentView(R.layout.activity_main);
         //检查版本是否大于M
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -36,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn1).setOnClickListener(this);
         findViewById(R.id.btn2).setOnClickListener(this);
         findViewById(R.id.btn3).setOnClickListener(this);
+        findViewById(R.id.btn4).setOnClickListener(this);
     }
 
     @Override
@@ -58,7 +62,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent3 = new Intent(this, VideoActivity3.class);
                 startActivity(intent3);
                 break;
-
         }
     }
 }

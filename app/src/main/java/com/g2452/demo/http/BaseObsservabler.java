@@ -3,6 +3,12 @@ package com.g2452.demo.http;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
+
+/**
+ * 作者：G on 2020/4/22
+ * 时间：11:00
+ * 概述：BaseObsservabler
+ */
 public abstract class BaseObsservabler<T> implements Observer<T> {
 
     @Override

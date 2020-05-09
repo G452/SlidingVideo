@@ -4,10 +4,11 @@ import android.content.Context;
 
 import java.util.Map;
 
-/*
- * mvp契约类
- * */
-
+/**
+ * 作者：G
+ * 时间：2020/4/22  18:23
+ * 概述： * mvp契约类
+ */
 public interface Icontract {
 
     interface Model {

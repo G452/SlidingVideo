@@ -14,7 +14,11 @@ import io.reactivex.schedulers.Schedulers;
 import okhttp3.ResponseBody;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
-
+/**
+ * 作者：G
+ * 时间：2020/4/22  18:23
+ * 概述：网络请求
+ */
 public class HttpUtlis {
 
 
@@ -55,6 +59,7 @@ public class HttpUtlis {
         doHttp("post",url,map,isShow);
         return this;
     }
+
 
     private void doHttp(String httpType, String url, Map<String, String> map, Boolean isShow) {
         Observable<ResponseBody> ob = null;
