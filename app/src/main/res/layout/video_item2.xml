@@ -5,16 +5,11 @@
     android:orientation="vertical">
 
     <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:id="@+id/relat_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <ImageView
-            android:visibility="gone"
-            android:id="@+id/item_img2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            ></ImageView>
 
         <RelativeLayout
             android:id="@+id/video_layout"

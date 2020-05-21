@@ -5,6 +5,7 @@ package com.g2452.demo.bean;
  * 时间：2020/4/23  13:57
  * 概述：
  */
+
 public class VideoBean {
     private String videoUrl;
     private String videoImgUrl;
