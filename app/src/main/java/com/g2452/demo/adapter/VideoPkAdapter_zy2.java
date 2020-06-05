@@ -21,7 +21,6 @@ public class VideoPkAdapter_zy2 extends BaseRecycleAdapter<VideoBean> {
     private Context mContext;
     public BaseViewHolder holder;
     public boolean isFirst = true;
-    private OnFirstPlayLintener linter;
 
     public VideoPkAdapter_zy2(Context context) {
         super(context);
@@ -45,22 +44,8 @@ public class VideoPkAdapter_zy2 extends BaseRecycleAdapter<VideoBean> {
         relat_layout.setLayoutParams(layoutParams);
         //增加封面
         video_layout_video.setVideoImg(videoBean.getVideoUrl());
-        /*首次播放*/
-        if (isFirst && postion == 0) {
-            linter.onItem(holder);
-            isFirst = false;
-        }
+        video_layout_video.setUp(videoBean.getVideoUrl(),true,"");
+        video_layout_video.setLooping(true);
     }
-
-    //传递接口
-    public void setFirstPlaykLinter(OnFirstPlayLintener linter) {
-        this.linter = linter;
-    }
-
-//自定义点击事件的  接口**
-    public interface OnFirstPlayLintener {
-        void onItem(BaseViewHolder holder);
-    }
-
 
 }

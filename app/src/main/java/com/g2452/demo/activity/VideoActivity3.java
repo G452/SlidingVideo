@@ -91,15 +91,8 @@ public class VideoActivity3<M extends Icontract.Model, V extends Icontract.View,
                     playVideoholder(holder);
                 }
             }
-        });  /*首次播放*/
-        videoAdapter2.setFirstPlaykLinter(new VideoPkAdapter_zy2.OnFirstPlayLintener() {
-            @Override
-            public void onItem(BaseViewHolder holder) {
-                if (holder != null) {
-                    setupVideoholder(holder);
-                }
-            }
-        });  /*首次播放*/
+        });
+
         /*滑动监听*/
         mRecycleView1.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -216,9 +209,6 @@ public class VideoActivity3<M extends Icontract.Model, V extends Icontract.View,
         }
         if (viewByPosition != null) {
             mVideotVideo = (EmptyControlVideo) viewByPosition.findViewById(R.id.video_layout_video);
-            mVideotVideo.release();
-            mVideotVideo.setUp(list.get(postion).getVideoUrl(), true, "");
-            mVideotVideo.setLooping(true);
             mVideotVideo.startPlayLogic();
         }
     }
@@ -228,20 +218,9 @@ public class VideoActivity3<M extends Icontract.Model, V extends Icontract.View,
      */
     private void playVideoholder(BaseViewHolder holder) {
         mVideotVideo = (EmptyControlVideo) holder.getView(R.id.video_layout_video);
-        mVideotVideo.release();
-        mVideotVideo.setUp(list.get(0).getVideoUrl(), true, "");
-        mVideotVideo.setLooping(true);
         mVideotVideo.startPlayLogic();
     }
-   /**
-     * 加载但不播放视频
-     */
-    private void setupVideoholder(BaseViewHolder holder) {
-        mVideotVideo = (EmptyControlVideo) holder.getView(R.id.video_layout_video);
-        mVideotVideo.release();
-        mVideotVideo.setUp(list.get(0).getVideoUrl(), true, "");
-        mVideotVideo.setLooping(true);
-    }
+
 
     /**
      * 模拟数据

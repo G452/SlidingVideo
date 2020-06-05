@@ -45,6 +45,8 @@ public class VideoPkAdapter extends BaseRecycleAdapter<VideoBean> {
         relat_layout.setLayoutParams(layoutParams);
         //增加封面
         video_layout_video.setVideoImg(videoBean.getVideoUrl());
+        video_layout_video.setUp(videoBean.getVideoUrl(),true,"");
+        video_layout_video.setLooping(true);
         /*首次播放*/
         if (isFirst && postion == 0) {
             linter.onItem(holder);

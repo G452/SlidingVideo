@@ -28,7 +28,6 @@ public class VideoAdapter2 extends BaseRecycleAdapter<VideoBean> {
     public BaseViewHolder holder;
     public boolean isFirst = true;
     private OnFirstPlayLintener linter;
-    private OnClickLintener clicklinter;
 
     public VideoAdapter2(Context context) {
         super(context);
@@ -51,7 +50,9 @@ public class VideoAdapter2 extends BaseRecycleAdapter<VideoBean> {
         layoutParams.height = displayMetrics.heightPixels;
         relat_layout.setLayoutParams(layoutParams);
         //增加封面
-        video_layout_video.setVideoImg(videoBean.getVideoUrl());
+        video_layout_video.setVideoImg(videoBean.getVideoImgUrl());
+        video_layout_video.setUp(videoBean.getVideoUrl(),true,"");
+        video_layout_video.setLooping(true);
         /*首次播放*/
         if (isFirst && postion == 0) {
             linter.onItem(holder);
@@ -67,14 +68,5 @@ public class VideoAdapter2 extends BaseRecycleAdapter<VideoBean> {
 //自定义点击事件的  接口**
     public interface OnFirstPlayLintener {
         void onItem(BaseViewHolder holder);
-    }
-    //传递接口
-    public void setClickLinter(OnClickLintener clicklinter) {
-        this.clicklinter = clicklinter;
-    }
-
-//自定义点击事件的  接口**
-    public interface OnClickLintener {
-        void onclick(BaseViewHolder holder,int postion);
     }
 }

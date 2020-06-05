@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.g2452.demo.R;
 import com.shuyu.gsyvideoplayer.utils.Debuger;
 import com.shuyu.gsyvideoplayer.utils.GSYVideoType;
@@ -77,7 +78,11 @@ public class EmptyControlVideo extends StandardGSYVideoPlayer {
 
     /*设置封面图*/
     public void setVideoImg(String url) {
-        Glide.with(this).load(url).into(mVideoImg);
+        Glide.with(this)
+                .asBitmap()
+                .load(url)
+                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+                .into(mVideoImg);
     }
 
 

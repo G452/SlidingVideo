@@ -6,6 +6,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.danikula.videocache.HttpProxyCacheServer;
+import com.g2452.demo.APP;
 import com.g2452.demo.R;
 import com.g2452.demo.adapter.VideoAdapter2;
 import com.g2452.demo.base.BaseActivity;
@@ -21,6 +24,7 @@ import com.g2452.demo.view.EmptyControlVideo;
 import com.shuyu.gsyvideoplayer.GSYVideoManager;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static com.shuyu.gsyvideoplayer.video.base.GSYVideoView.CURRENT_STATE_ERROR;
 import static com.shuyu.gsyvideoplayer.video.base.GSYVideoView.CURRENT_STATE_NORMAL;
@@ -127,26 +131,6 @@ public class VideoActivity<M extends VideoModel, V extends VideoView, P extends 
                 }
             }
         });
-//        /*视频点击*/
-//        videoAdapter2.setClickLinter(new VideoAdapter2.OnClickLintener() {
-//            @Override
-//            public void onclick(BaseViewHolder holder,int postion) {
-//                mVideotVideo = (EmptyControlVideo) holder.getView(R.id.video_layout_video);
-////                当前播放状态
-//                int lastState = mVideotVideo.getGSYVideoManager().getLastState();
-////                暂停状态则开始播放
-//                if(lastState==CURRENT_STATE_NORMAL||lastState==CURRENT_STATE_ERROR){
-//                    playVideo(postion);
-//                    mVideotVideo.isPauseImg(View.GONE);
-//                }else if(lastState==CURRENT_STATE_PLAYING){
-////                    播放状态暂停
-//                    mVideotVideo.onVideoPause();
-//                    mVideotVideo.isPauseImg(View.VISIBLE);
-//                }
-//
-//
-//            }
-//        });
     }
 
     /**
@@ -156,7 +140,6 @@ public class VideoActivity<M extends VideoModel, V extends VideoView, P extends 
         View viewByPosition = manager.findViewByPosition(postion);
         if (viewByPosition != null) {
             EmptyControlVideo video_layout_video = (EmptyControlVideo) viewByPosition.findViewById(R.id.video_layout_video);
-            video_layout_video.release();
             video_layout_video.onVideoPause();
         }
     }
@@ -167,9 +150,6 @@ public class VideoActivity<M extends VideoModel, V extends VideoView, P extends 
         View viewByPosition = manager.findViewByPosition(postion);
         if (viewByPosition != null) {
             mVideotVideo = (EmptyControlVideo) viewByPosition.findViewById(R.id.video_layout_video);
-            mVideotVideo.release();
-            mVideotVideo.setUp(list.get(postion).getVideoUrl(), true, "");
-            mVideotVideo.setLooping(true);
             mVideotVideo.startPlayLogic();
         }
     }   /**
@@ -177,9 +157,6 @@ public class VideoActivity<M extends VideoModel, V extends VideoView, P extends 
      */
     private void playVideoholder(BaseViewHolder holder) {
         mVideotVideo = (EmptyControlVideo) holder.getView(R.id.video_layout_video);
-        mVideotVideo.release();
-        mVideotVideo.setUp(list.get(0).getVideoUrl(), true, "");
-        mVideotVideo.setLooping(true);
         mVideotVideo.startPlayLogic();
     }
 
