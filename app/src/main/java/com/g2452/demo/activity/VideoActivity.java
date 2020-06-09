@@ -111,9 +111,8 @@ public class VideoActivity<M extends VideoModel, V extends VideoView, P extends 
                                             if (viewP == postion) {
                                                 /*播放*/
                                                 playVideo(postion);
-                                                /*暂停*/
-                                                pauseVide(postion + 1);
-                                                pauseVide(postion - 1);
+//                                                pauseVide(postion + 1);
+//                                                pauseVide(postion - 1);
                                             }
                                         }
                                     } else {

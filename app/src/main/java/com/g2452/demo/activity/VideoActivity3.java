@@ -117,8 +117,8 @@ public class VideoActivity3<M extends Icontract.Model, V extends Icontract.View,
                                                 /*播放*/
                                                 playVideo(postion, 1);
                                                 /*暂停*/
-                                                pauseVide(postion + 1, 1);
-                                                pauseVide(postion - 1, 1);
+//                                                pauseVide(postion + 1, 1);
+//                                                pauseVide(postion - 1, 1);
                                             }
                                         }
                                     } else {
@@ -159,8 +159,6 @@ public class VideoActivity3<M extends Icontract.Model, V extends Icontract.View,
                                                 /*播放*/
                                                 playVideo(postion,2);
                                                 /*暂停*/
-                                                pauseVide(postion + 1,2);
-                                                pauseVide(postion - 1,2);
                                             }
                                         }
                                     } else {

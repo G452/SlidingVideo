@@ -31,9 +31,14 @@
         android:layout_height="wrap_content">
     </Button>
     <Button
-        android:visibility="gone"
+        android:id="@+id/btn5"
+        android:text="双视频播放"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </Button>
+    <Button
         android:id="@+id/btn4"
-        android:text="上下左右PK视频"
+        android:text="图片手势放大"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </Button>

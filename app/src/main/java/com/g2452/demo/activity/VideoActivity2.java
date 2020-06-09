@@ -164,9 +164,8 @@ public class VideoActivity2<M extends Icontract.Model, V extends Icontract.View,
                                             if (viewP == postion) {
                                                 /*播放*/
                                                 playVideo(postion,2);
-                                                /*暂停*/
-                                                pauseVide(postion + 1,2);
-                                                pauseVide(postion - 1,2);
+//                                                pauseVide(postion + 1,2);
+//                                                pauseVide(postion - 1,2);
                                             }
                                         }
                                     } else {
