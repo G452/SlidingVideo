@@ -11,13 +11,13 @@
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
-        <com.g2452.demo.view.EmptyControlVideo
+        <com.g2452.demo.view.MultiSampleVideo
             android:id="@+id/video1"
             android:layout_width="match_parent"
             android:layout_height="400dp"
             android:layout_weight="1" />
 
-        <com.g2452.demo.view.EmptyControlVideo
+        <com.g2452.demo.view.MultiSampleVideo
             android:id="@+id/video2"
             android:layout_width="match_parent"
             android:layout_height="400dp"
